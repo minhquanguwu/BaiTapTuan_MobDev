@@ -2,8 +2,10 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Slide02" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">@color/blue</item>
     </style>
 
     <style name="Theme.Slide02" parent="Base.Theme.Slide02" />
+
+    <color name="blue">#2167F3</color>
 </resources>
