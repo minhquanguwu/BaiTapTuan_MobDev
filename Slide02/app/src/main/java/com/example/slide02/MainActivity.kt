@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val numberPicker: NumberPicker = findViewById(R.id.NumberPicker)
-        numberPicker.minValue = 0
-        numberPicker.maxValue = 10
-        numberPicker.value = 5
+        numberPicker.minValue = 900
+        numberPicker.maxValue = 2000
+        numberPicker.value = 999
     }
 
 
