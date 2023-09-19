@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item1"
+        android:title="Popup Item 1" />
+    <item
+        android:id="@+id/menu_item2"
+        android:title="Popup Item 2" >
+        <menu
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <item
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:title="Item 3" />
+            <item
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:title="Item 4" />
+        </menu>
+    </item>
+</menu>
