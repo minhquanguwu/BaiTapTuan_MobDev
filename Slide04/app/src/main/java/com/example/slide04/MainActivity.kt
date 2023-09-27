@@ -1,10 +1,12 @@
 package com.example.slide04
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
-import androidx.navigation.ui.AppBarConfiguration
 import com.example.slide04.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -23,13 +25,26 @@ class MainActivity : AppCompatActivity() {
         var toolbar : Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        binding.NumberPicker.minValue = 900;
-        binding.NumberPicker.maxValue = 1100;
-        binding.NumberPicker.value = 999;
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_demo,menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.it1 -> {
+                var intent = Intent(this, Activity1::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.it2 -> {
+                var intent = Intent(this, Activity2::class.java)
+                startActivity(intent)
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 }
