@@ -8,7 +8,7 @@ object DatabaseContract {
         companion object {
             const val TABLE_NAME = "user"
             const val COLUMN_NAME_NAME = "name"
-            const val _ID = BaseColumns._ID // Define the _ID constant
+            const val _ID = BaseColumns._ID
         }
     }
 }

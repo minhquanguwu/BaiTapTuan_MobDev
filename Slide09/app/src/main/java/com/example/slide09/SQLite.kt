@@ -97,7 +97,7 @@ class DatabaseHelper(context: Context) :
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        // Handle database schema upgrades here if needed
+
     }
 
     companion object {
