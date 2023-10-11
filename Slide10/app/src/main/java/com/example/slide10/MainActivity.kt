@@ -8,6 +8,7 @@ import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -41,11 +42,20 @@ class MainActivity : AppCompatActivity() {
         // class to add values in the database
         val values = ContentValues()
 
-        // fetching text from user
-        values.put(MyContentProvider.name, (findViewById<View>(R.id.textName) as EditText).text.toString())
 
-        // inserting into database through content URI
-        contentResolver.insert(MyContentProvider.CONTENT_URI, values)
+        val s = findViewById<EditText>(R.id.textName).text
+        val stringList = s.split("\n")
+
+        stringList.forEach {
+            Log.d("string","$it")
+            // fetching text from user
+            values.put(MyContentProvider.name, it)
+
+            // inserting into database through content URI
+            contentResolver.insert(MyContentProvider.CONTENT_URI, values)
+
+        }
+
 
         // displaying a toast message
         Toast.makeText(baseContext, "New Record Inserted", Toast.LENGTH_LONG).show()
@@ -76,4 +86,33 @@ class MainActivity : AppCompatActivity() {
             resultView.text = "No Records Found"
         }
     }
+
+    fun onClickUpdateDetails(view: View?) {
+        // Create a ContentValues object with the updated data
+        val updatedValues = ContentValues()
+        updatedValues.put(MyContentProvider.name, "Quang")
+        val RECORD_ID_TO_UPDATE = "1"
+
+        // Define the Uri for the specific record you want to update
+        val recordUri = Uri.parse("content://com.example.slide10.provider/users/$RECORD_ID_TO_UPDATE")
+
+        // Use ContentResolver to update the record
+        val rowsAffected = contentResolver.update(
+            recordUri, // Uri for the specific record
+            updatedValues, // ContentValues with updated data
+            null, // Selection (optional)
+            null // SelectionArgs (optional)
+        )
+
+        if (rowsAffected > 0) {
+            // Update was successful
+            // You can perform any additional actions here
+            Toast.makeText(baseContext, "Record Updated", Toast.LENGTH_LONG).show()
+        } else {
+            // Update failed
+            // Handle the failure or notify the user
+            Toast.makeText(baseContext, "Update Failed", Toast.LENGTH_LONG).show()
+        }
+    }
+
 }

@@ -32,7 +32,7 @@ class MyContentProvider : ContentProvider() {
         const val TABLE_NAME = "Users"
 
         // declaring version of the database
-        const val DATABASE_VERSION = 2
+        const val DATABASE_VERSION = 3
 
         // sql query to create the table
         const val CREATE_DB_TABLE =

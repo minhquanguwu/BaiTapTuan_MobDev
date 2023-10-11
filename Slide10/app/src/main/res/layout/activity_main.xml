@@ -56,7 +56,8 @@
             android:text="@string/insertButtontext"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/loadButton"
@@ -89,13 +90,15 @@
             android:id="@+id/btnGetContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Get Contacts">
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:onClick="onClickUpdateDetails"
+            android:textStyle="bold"
+            android:text="Update Data">
         </Button>
-
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

@@ -1,15 +1,17 @@
 package com.example.slide10_2
 
 import android.annotation.SuppressLint
+import android.content.ComponentName
+import android.content.ServiceConnection
 import android.net.Uri
 import android.os.Bundle
+import android.os.IBinder
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     var CONTENT_URI = Uri.parse("content://com.example.slide10.provider/users")
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
